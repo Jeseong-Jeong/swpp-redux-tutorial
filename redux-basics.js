@@ -13,7 +13,7 @@ const reducer = (state = initialState, action) => {
 }
 
 const store = createStore(reducer);
-console.log(store);
+console.log(store.getState());
 
 store.subscribe(() => {
   console.log('[Subscription]', store.getState());
