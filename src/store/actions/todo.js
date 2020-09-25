@@ -66,7 +66,8 @@ export const toggleTodo_ = (id) => {
 
 export const toggleTodo = (id) => {
   return dispatch => {
-    return axios.put('/api/todo/' + id)
-      .then(res => dispatch(toggleTodo_(id)));
+    return axios.put(`/api/todo/${id}/`)
+      .then(res => dispatch(toggleTodo_(id)))
+      .catch(err => console.log('gotta!'));
   };
 };

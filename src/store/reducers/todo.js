@@ -1,10 +1,14 @@
 import * as actionTypes from '../actions/actionTypes';
 
 const initialState = {
-    todos: [ 
-    ], 
-    selectedTodo: null
-};
+    todos: [
+      { id: 1, title: 'SWPP', content: 'take swpp class', done: true },
+      { id: 2, title: 'Movie', content: 'watch movie', done: false },
+      { id: 3, title: 'Dinner', content: 'eat dinner', done: false }
+    ],
+    selectedTodo: null,
+  };
+
 const reducer = (state = initialState, action) => {
     switch (action.type) {
         case actionTypes.ADD_TODO:
@@ -12,7 +16,7 @@ const reducer = (state = initialState, action) => {
                 id: action.id,
                 title: action.title, 
                 content: action.content, 
-                done: action.done
+                done: action.done,
             };
             return { ...state, todos: [...state.todos, newTodo] };
         case actionTypes.DELETE_TODO:
